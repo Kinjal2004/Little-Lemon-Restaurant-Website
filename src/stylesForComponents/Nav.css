@@ -1,0 +1,13 @@
+.navMenu menu {
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+}
+
+.navMenu li {
+    justify-self: end;
+    list-style-type: none;
+}
+
+.navMenu a {
+    text-decoration: none;
+}

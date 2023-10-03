@@ -1,0 +1,15 @@
+.hero {
+    background: var(--primaryColor);
+    height: 900px;
+}
+
+.heroSection {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: var(--margin);
+}
+
+.heroSection img {
+    max-width: 740px;
+    max-height: 840px;
+}

@@ -1,0 +1,49 @@
+.testimonials {
+    background: var(--primaryColor);
+    height: 1000px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.TestimonialsHeading {
+    justify-self: center;
+}
+
+.TestimonialsList {
+    display: flex;
+    gap: 40px;
+}
+
+#cardImage{
+    grid-area: cardImage;
+    height: 120px;
+    width: 120px;
+    border-radius: 18px;
+}
+#cardName {
+    grid-area: cardName;
+}
+#cardRating {
+    grid-area: cardRating;
+}
+#cardReview{
+    grid-area: cardReview;
+}
+
+#testimonialCard {
+    height: 400px;
+    width: 400px;
+    display: grid;
+    grid-template-areas: 
+        "cardImage cardName cardName"
+        "cardImage cardRating cardRating"
+        "cardReview cardReview cardReview"
+        "cardReview cardReview cardReview"
+    ;;
+    background: white;
+    gap:10px;
+    padding: 20px;
+    border-radius: 32px;
+}
+
