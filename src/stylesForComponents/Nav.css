@@ -1,13 +1,78 @@
-.navMenu menu {
+.navbar {
+    position: relative;
+}
+
+.Navigation menu {
     display: grid;
     grid-template-columns: repeat(6, auto);
+    gap: 30px;
+}
+
+.Navigation li {
+    justify-self: end;
 }
 
 .navMenu li {
-    justify-self: end;
     list-style-type: none;
+    font-family: var(--karla);
+    font-size: 14pt;
+    font-weight: medium;
 }
 
 .navMenu a {
+    color: var(--primaryColor);
     text-decoration: none;
+    text-transform: uppercase;
+}
+.navMenu a:hover {
+    color: var(--secondaryColor);
+}
+
+/* disabled */
+.navHamburg {
+    display: none;
+}
+
+.hamburgerNav {
+    display: none;
+}
+
+/* media Query */
+@media screen and (max-width: 920px) {
+    .Navigation {
+        display: none;
+    }
+
+    .navHamburg {
+        display: block;
+        color: var(--primaryColor);
+        font-size: 42px;
+    }
+    .navHamburg:hover {
+        color: var(--secondaryColor);
+        cursor: pointer;
+    }
+    .hamburgerNav {
+        display: grid;
+        grid-template-rows: 100px auto;
+        position: absolute;
+        background: white;
+        top: 0;
+        right: 0;
+        padding: 20px;
+        height: 500px;
+        width: 200px;
+        border-radius: 0 0 0 32px;
+    }
+
+    .hamburgerNav menu {
+        display: grid;
+        grid-template-rows: auto;
+        justify-content: start;
+    }
+
+    .hamburgerNav li {
+        padding: 0;
+        justify-self: start;
+    }
 }

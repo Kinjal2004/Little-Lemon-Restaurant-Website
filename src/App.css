@@ -3,15 +3,115 @@
 :root {
     --primaryColor: #495E57;
     --secondaryColor: #F4CE14;
+    --greyBack: #E3E3E3;
     --karla: 'Karla', sans-serif;
     --markazi: 'Markazi Text', serif;
-    --margin: 0 42px 0 42px;
+    --margin: 0 20px 0 20px;
+    --max-width: 1024px;
 }
 /* font-family: 'Karla', sans-serif;
 font-family: 'Markazi Text', serif; */
 
+/* Containers */
 .app {
-    display: grid;
-    grid-template-rows: 100px auto 500px;
+    display: flex;
+    flex-direction: column;
 }
 
+.SecContainer {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.SecBox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin: var(--margin);
+    width: var(--max-width);
+}
+
+/* Properties for text */
+
+.mainHeading {
+    font-family: var(--markazi);
+    font-size: 48pt;
+    font-weight: medium;
+}
+
+.mainSubHeading {
+    color: var(--secondaryColor);
+    font-family: var(--markazi);
+    font-size: 32pt;
+    font-weight: regular;
+}
+
+.leadText {
+    font-family: var(--karla);
+    font-size: 14pt;
+    font-weight: medium;
+}
+
+/* articleCard Text properties */
+.cardTile {
+    font-family: var(--karla);
+    font-size: 18pt;
+    font-weight: bold;
+    color: black;
+}
+
+.paragraphText {
+    font-family: var(--karla);
+    font-size: 16pt;
+    font-weight: regular;
+    color: var(--primaryColor);
+    line-height: 1.4em;
+}
+.highlightText {
+    font-family: var(--karla);
+    font-size: 16pt;
+    font-weight: medium;
+    color: var(--primaryColor);
+}
+
+.costText {
+    color: #FF5C00;
+    font-family: var(--karla);
+    font-size: 16pt;
+    font-weight: regular;
+}
+
+.deliveryBtn {
+    font-family: var(--karla);
+    font-size: 16pt;
+    font-weight: regular;
+    color: black;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.articleCardPadding {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+/* Properties for button */
+.mainBtn {
+    border: none;
+    border-radius: 16px;
+    background: var(--secondaryColor);
+    color: var(--primaryColor);
+    width: 200px;
+    height: 50px;
+    font-family: var(--karla);
+    font-weight: bold;
+    font-size: 15pt;
+}
+.mainBtn:hover {
+    color: white;
+    background: var(--primaryColor);
+    transition: ease 0.2s;
+}

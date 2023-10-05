@@ -6,10 +6,12 @@ import Nav from './Nav'
 
 const Header = () => {
   return (
-    <div className='header'>
-        <img src={Logo} alt="error" />
+    <section className='SecContainer'>
+      <div className='headerContainer'>
+        <img className='headerImg' src={Logo} alt="error" />
         <Nav/>
-    </div>
+      </div>
+    </section>
   )
 }
 

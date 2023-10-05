@@ -1,0 +1,121 @@
+.highlights {
+    width: var(--max-width);
+    display: grid;
+    grid-template-columns: auto;
+    gap: 20px;
+    margin: var(--margin);
+}
+.highlightsHead {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 40px;
+}
+
+.headText {
+    color: var(--primaryColor);
+}
+
+.grdItGoLeft {
+    align-self: center;
+    justify-self: start;
+}
+.grdItGoRight {
+    align-self: center;
+    justify-self: end;
+}
+
+/* SpecialsList */
+.specialsList {
+    padding: 20px 0 20px 0;
+    place-self: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    background: green;
+    width: var(--max-width);
+}
+
+/* articleCard */
+#articleImage {
+    grid-area: articleImage;
+}
+#detailsContainer {
+    grid-area: detailsContainer;
+}
+#articleName {
+    grid-area: articleName;
+}
+#articlePrice{
+    grid-area: articlePrice;
+    justify-self: end;
+}
+#articleDetails {
+    grid-area: articleDetails;
+}
+#articleBtn {
+    grid-area: articleBtn;
+    justify-self: start;
+    align-self: end;
+}
+
+.articleCard {
+    height: 540px;
+    max-width: 328px;
+    border-radius: 16px;
+    background: var(--greyBack);
+    display: flex;
+    flex-direction: column;
+}
+
+.detailsContainer {
+    height: 100%;
+    display: grid;
+    grid-template-areas:
+        "articleName articlePrice"
+        "articleDetails articleDetails"
+        "articleBtn articleBtn"
+    ;
+    margin: 20px;
+    grid-template-rows: 40px auto 20px;
+}
+
+.articleCard img {
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+    border-radius: 16px 16px 0 0 ;
+}
+.articleCard:hover {
+    background: lightgray;
+}
+
+.deliveryBtn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.articleDeliveryIcon {
+    font-size: 25px;
+    align-self: center;
+    padding-left: 10px;
+}
+
+@media  screen and (max-width:980px) {
+    .specialsList {
+        max-width: 720px;
+    }
+    .articleCard {
+        max-width: px;
+    }
+}
+
+@media  screen and (max-width:800px) {
+    .specialsList {
+        max-width: 350px;
+    }
+}

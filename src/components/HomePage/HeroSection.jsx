@@ -1,29 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import css from "./HeroSection.css"
 import heroImage from "../../assets/restauranfood.jpg"
 
 const HeroSection = () => {
+  
   return (
-    <div className='hero'>
-        <section className="heroSection">
-            <div>
-                <div>
-                    <span>Little Lemon</span>
-                </div>
-                <span>Chicago</span>
-                <p>We are a family owned Mediterranean restaurant,
-                    focused on traditional recipes served with a modern
-                    twist.
-                </p>
-                <div>
-                    <button>Reserve a Table</button>
-                </div>
-            </div>
-            <div>
-                <img src={heroImage} alt="error" />
-            </div>
-        </section>
+    <section className='hero' id='hero'>
+      <div className='heroContainer' id='heroContainer'>
+        <div className='heroDetails' id='heroDetails'>
+            <span className='mainHeading heroHeading'>
+              Little Lemon
+            </span>
+            <span className='mainSubHeading heroText'>Chicago</span>
+            <p className='leadText heroText'>
+              We are a family owned Mediterranean restaurant,focused on traditional recipes served with a modern twist.
+            </p>
+            <button className='mainBtn yellowBorderBtn'>
+              Reserve a Table
+            </button>
+        </div>
+        <img className="heroImage" src={heroImage} alt="error" />
       </div>
+    </section>
   )
 }
 
