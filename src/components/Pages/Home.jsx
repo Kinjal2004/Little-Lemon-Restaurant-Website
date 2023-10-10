@@ -1,11 +1,11 @@
 import React from 'react'
-import css from "../stylesForComponents/Main.css"
+import css from "./Home.css"
 import HeroSection from './HomePage/HeroSection'
 import Testimonials from './HomePage/Testimonials'
 import About from './HomePage/About'
 import HighLights from './HomePage/HighLights'
 
-const Main = () => {
+const Home = () => {
   return (
     <div className='mainSection'>
       <HeroSection/>
@@ -16,4 +16,4 @@ const Main = () => {
   )
 }
 
-export default Main
+export default Home

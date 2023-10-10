@@ -1,9 +1,12 @@
 .footer {
-    background: var(--primaryColor);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
 }
 
-.footer img {
-    height: 200px;
+.footer-logo {
+    height: 240px;
 }
 .footer menu {
     padding: 0;

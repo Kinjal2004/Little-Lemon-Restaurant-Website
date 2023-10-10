@@ -1,0 +1,99 @@
+.highlights {
+    grid-template-rows: auto auto;
+}
+.highlightsHead {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
+.specialsList {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
+}
+
+/* article */
+.articleCard {
+    display: grid;
+    grid-template-rows: 180px auto;
+    height: 480px;
+    background: var(--greyColor);
+    border-radius: 16px;
+    transition: ease .4s;
+}
+
+.articleImage {
+    object-fit: cover;
+    width: 100%;
+    height: 180px;
+    border-radius: 16px 16px 0 0;
+}
+
+.articleTitle {
+    grid-area: articleTitle;
+}
+.articleCost {
+    grid-area: articleCost;
+    justify-self: end;
+}
+.articleText {
+    grid-area: articleText;
+}
+.articleBtn {
+    grid-area: articleBtn;
+    justify-self: start;
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 200px;
+    align-content: center;
+    justify-content: space-between;
+    align-self: end;
+}
+.articleDeliveryIcon {
+    padding: 0;
+    font-size: 24px;
+}
+
+.articleDetails {
+    display: grid;
+    grid-template-areas: 
+        "articleTitle articleCost"
+        "articleText articleText"
+        "articleBtn articleBtn"
+    ;
+    grid-template-rows: 40px auto 20px;
+    padding: 20px;
+}
+.articleCard:hover {
+    background: rgb(174, 174, 174);
+    transition: ease .4s;
+}
+
+/* extras */
+.headText {
+    color: var(--primaryColor);
+}
+
+.grdItGoLeft {
+    justify-self: start;
+}
+.grdItGoRight {
+    justify-self: end;
+}
+
+@media screen and (max-width:840px){
+    .specialsList {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .specialsList {
+        grid-template-columns: auto;
+    }
+}

@@ -1,13 +1,13 @@
 import React from 'react'
-import css from "../stylesForComponents/Footer.css"
-import footerImage from "../assets/Logo2.png"
+import css from "./Footer.css"
+import footerImage from "../../assets/Logo2.png"
 import {BsFacebook,BsInstagram, BsTwitter} from "react-icons/bs"
 
 const Footer = () => {
   return (
-    <section className='footer SecContainer'>
-        <div className='SecBox'>
-            <img src={footerImage} alt="error" />
+    <section className='primary-background section'>
+        <div className='container footer'>
+            <img className='footer-logo' src={footerImage} alt="error" />
             <div>
                 <span className='footerHd'>Sitemap</span>
                 <menu>

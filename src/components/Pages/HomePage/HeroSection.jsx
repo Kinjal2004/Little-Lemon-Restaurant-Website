@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import css from "./HeroSection.css"
-import heroImage from "../../assets/restauranfood.jpg"
+import heroImage from "../../../assets/restauranfood.jpg"
 
 const HeroSection = () => {
   
   return (
-    <section className='hero' id='hero'>
-      <div className='heroContainer' id='heroContainer'>
-        <div className='heroDetails' id='heroDetails'>
-            <span className='mainHeading heroHeading'>
-              Little Lemon
-            </span>
-            <span className='mainSubHeading heroText'>Chicago</span>
-            <p className='leadText heroText'>
+    <section className='section primary-background hero'>
+      <div className='container grid-container heroContainer'>
+        <div className='about-text-box'>
+          <div>
+            <h1>Little Lemon</h1>
+            <h2 className='heroText'>Chicago</h2>
+          </div>
+            <p className='heroText'>
               We are a family owned Mediterranean restaurant,focused on traditional recipes served with a modern twist.
             </p>
             <button className='mainBtn yellowBorderBtn'>

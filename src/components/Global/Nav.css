@@ -5,7 +5,7 @@
 .Navigation menu {
     display: grid;
     grid-template-columns: repeat(6, auto);
-    gap: 30px;
+    gap: 20px;
 }
 
 .Navigation li {

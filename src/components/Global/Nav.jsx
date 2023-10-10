@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import css from "../stylesForComponents/Nav.css"
+import css from "./Nav.css"
 import {BiMenu} from "react-icons/bi"
 import {AiOutlineClose} from "react-icons/ai" 
 
