@@ -1,3 +1,6 @@
+.active {
+    border-bottom: 5px solid var(--secondaryColor);
+}
 .navbar {
     position: relative;
 }
@@ -19,12 +22,12 @@
     font-weight: medium;
 }
 
-.navMenu a {
+.nav-item {
     color: var(--primaryColor);
     text-decoration: none;
     text-transform: uppercase;
 }
-.navMenu a:hover {
+.nav-item:hover {
     color: var(--secondaryColor);
 }
 
@@ -52,6 +55,7 @@
         color: var(--secondaryColor);
         cursor: pointer;
     }
+    
     .hamburgerNav {
         display: grid;
         grid-template-rows: 100px auto;

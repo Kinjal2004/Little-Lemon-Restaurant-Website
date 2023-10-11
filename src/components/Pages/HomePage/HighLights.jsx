@@ -2,6 +2,7 @@ import React from 'react'
 import css from "./HighLights.css"
 import articleImage from "../../../assets/greek salad.jpg"
 import {MdDeliveryDining} from "react-icons/md"
+import { Link } from 'react-router-dom'
 
 const HighLights = () => {
   return (
@@ -9,7 +10,9 @@ const HighLights = () => {
         <div className='container grid-container highlights'>
             <div className='highlightsHead'>
                 <h2 className="mainSubHeading headText grdItGoLeft">This Week's Specials!</h2>
-                <button className="mainBtn grdItGoRight">Online Menu</button>
+                <Link to="/UnderConstruction">
+                    <button className="mainBtn grdItGoRight">Online Menu</button>
+                </Link>
             </div>
             <div className='specialsList'>
                 <article className='articleCard'>

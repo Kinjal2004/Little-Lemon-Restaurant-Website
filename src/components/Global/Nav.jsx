@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import css from "./Nav.css"
 import {BiMenu} from "react-icons/bi"
 import {AiOutlineClose} from "react-icons/ai" 
+import {NavLink} from "react-router-dom"
 
 const Nav = () => {
   const [hamValue, setHamValue] = useState(false);
@@ -21,12 +22,12 @@ const Nav = () => {
       <div className='navBar'>
         <nav className='Navigation'>
             <menu className='navMenu'>
-                <li><a href="">Home</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Menu</a></li>
-                <li><a href="">Reservation</a></li>
-                <li><a href="">Order Online</a></li>
-                <li><a href="">Login</a></li>
+                <li><NavLink to="/" className="nav-item">Home</NavLink></li>
+                <li><NavLink to="/UnderConstruction" className="nav-item">About</NavLink></li>
+                <li><NavLink to="/UnderConstruction" className="nav-item">Menu</NavLink></li>
+                <li><NavLink to="/TableReservation" className="nav-item">Reservation</NavLink></li>
+                <li><NavLink to="/UnderConstruction" className="nav-item">Order Online</NavLink></li>
+                <li><NavLink to="/UnderConstruction" className="nav-item">Login</NavLink></li>
             </menu>
         </nav>
         <BiMenu  className='navHamburg'
@@ -41,12 +42,12 @@ const Nav = () => {
           <AiOutlineClose  className='navHamburg'
           onClick={() => setHamValue(!hamValue)}/>
               <menu className='navMenu'>
-                  <li><a href="">Home</a></li>
-                  <li><a href="">About</a></li>
-                  <li><a href="">Menu</a></li>
-                  <li><a href="">Reservation</a></li>
-                  <li><a href="">Order Online</a></li>
-                  <li><a href="">Login</a></li>
+                <li><NavLink to="/" className="nav-item">Home</NavLink></li>
+                <li><NavLink to="/UnderConstruction" className="nav-item">About</NavLink></li>
+                <li><NavLink to="/UnderConstruction" className="nav-item">Menu</NavLink></li>
+                <li><NavLink to="/TableReservation" className="nav-item">Reservation</NavLink></li>
+                <li><NavLink to="/UnderConstruction" className="nav-item">Order Online</NavLink></li>
+                <li><NavLink to="/UnderConstruction" className="nav-item">Login</NavLink></li>
               </menu>
           </nav>
         </>
