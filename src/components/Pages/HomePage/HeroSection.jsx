@@ -16,7 +16,7 @@ const HeroSection = () => {
             <p className='heroText'>
               We are a family owned Mediterranean restaurant,focused on traditional recipes served with a modern twist.
             </p>
-            <Link to="/TableReservation">
+            <Link to="/BookingPage">
               <button className='mainBtn yellowBorderBtn'>
                 Reserve a Table
               </button>

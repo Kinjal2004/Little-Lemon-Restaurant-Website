@@ -1,7 +1,7 @@
 import React from 'react'
 import css from "./BookingForm.css"
 
-const BookingForm = ({resData, setResData, handleSubmit}) => {
+const BookingForm = ({handleUpdate, handleSubmit}) => {
     return (
         <section className='section'>
             <div className='container grid-container res-container'>
@@ -9,13 +9,13 @@ const BookingForm = ({resData, setResData, handleSubmit}) => {
                     <div className='res-part'>
                         <label className="res-text" htmlFor="res-date">Date</label>
                         <input className="res-input" type="date" id='res-date' 
-                        onChange={(e) => setResData({...resData, date: e.target.value})}
+                        onChange={(e) => handleUpdate("date", e.target.value)}
                         />
                     </div>
                     <div className='res-part'>
                         <label className="res-text" htmlFor="res-time">Time</label>
                         <select className="res-input" id="res-time"
-                        onChange={(e) => setResData({...resData, time: e.target.value})}
+                        onChange={(e) => handleUpdate("time", e.target.value)}
                         >
                             <option value="17:00">17:00</option>
                             <option value="18:00">18:00</option>
@@ -29,13 +29,13 @@ const BookingForm = ({resData, setResData, handleSubmit}) => {
                         <label className="res-text" htmlFor="res-guest">Number of guest</label>
                         <input className="res-input" type="number" id="guest" 
                         placeholder='1' min='1' max='10'
-                        onChange={(e) => setResData({...resData, people: e.target.value})}
+                        onChange={(e) => handleUpdate("guest", e.target.value)}
                         />
                     </div>
                     <div className='res-part'>
                         <label className="res-text" htmlFor="res-occasion">Occasion</label>
                         <select className="res-input" name="" id="res-occasion"
-                        onChange={(e) => setResData({...resData, occasion: e.target.value})}
+                        onChange={(e) => handleUpdate("occasion", e.target.value)}
                         >
                             <option value="Birthday">Birthday</option>
                             <option value="Anniversary">Anniversary</option>
