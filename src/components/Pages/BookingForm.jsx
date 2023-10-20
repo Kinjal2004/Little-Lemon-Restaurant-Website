@@ -1,7 +1,7 @@
 import React, { useState} from 'react'
 import css from "./BookingForm.css"
 
-const BookingForm = ({setBookingData, updateTimes, slotTimes, navigate}) => {
+const BookingForm = ({handleSelectedTime, updateTimes, slotTimes, navigate}) => {
     const [booking, setBooking] = useState({
         date: "",
         time: "",
@@ -35,7 +35,11 @@ const BookingForm = ({setBookingData, updateTimes, slotTimes, navigate}) => {
                     <div className='res-part'>
                         <label className="res-text" htmlFor="res-date">Date</label>
                         <input className="res-input" type="date" id='res-date' 
-                        onChange={(e) => handleUpdate("date", e.target.value)}
+                        onChange={(e) => {
+                            handleUpdate("date", e.target.value)
+                            handleSelectedTime(e.target.value)
+                            /* console.log(booking.date) */
+                        }}
                         />
                     </div>
                     <div className='res-part'>

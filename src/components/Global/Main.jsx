@@ -6,12 +6,15 @@ import UnderConstruction from '../../components/Pages/UnderConstruction';
 import BookingConfirmed from '../../components/Pages/BookingConfirmed';
 import Menu from '../../components/Pages/Menu'
 
-const Main = () => { 
+const Main = () => {
+    /* selected time state */
+    const [selectedTime, setSelectedTime] = useState("");
+
     /* Booking State */
     const [bookingData, setBookingData] = useState(
         [
             {
-                date: "20/10/2023", 
+                date: "2023-10-20", 
                 timeSlots:[
                     {
                         slotTime: "16:00",
@@ -34,10 +37,10 @@ const Main = () => {
 
     /* Fetch API functions */
     const fetchAPI = (targetDate) => {
+        console.log(targetDate)
         let result = [];
         for (const booking of bookingData) {
-            if (booking.date === targetDate) {
-                console.log(booking.date)
+            if (booking.date === targetDate.toString()) {
                 for (let i = 16; i <= 21; i++ ) {
                     let count = 0;
                     const slot = i+ ":00"
@@ -51,44 +54,62 @@ const Main = () => {
                         result.push(slot);
                     }
                 }
+            } else {
+                for (let i = 16; i <= 21; i++) {
+                    const slot = i + ":00"
+                    result.push(slot);
+                }
             }
         }
         return result;
     }
     /* end of func */
 
-    console.log(fetchAPI("20/10/2023"))
     
     const submitAPI = (formData) => {}
     
     /* reducer for available booking slot times */
     const navigate = useNavigate();
     const reducer = (state, action) => {
-        if(action.type === 'reduce_time') return (
-            state.filter((value) => value !== action.payload)
-            )
-        return state;
-    }
-    
+        if(action.type === 'reduce_time') {
+            return (
+                state.filter((value) => value !== action.payload)
+                )
+        }
+        if (action.type === 'update_available_time') {
+            const updatedSlots = fetchAPI(selectedTime)
+            return updatedSlots;
+        }
+            return state;
+        }
+        
+        
+        const initializeTimes = fetchAPI(selectedTime)
+        
+        const [availableTimes, dispatch] = useReducer(reducer, initializeTimes) 
+        
+        const updateTimes = (value) => {
+            dispatch({type: 'reduce_time', payload: value})
+        }
 
-    const initializeTimes = ["16:00", "17:00", "18:00", "19:00", "20:00", "21:00" ,"22:00"]
-
-
-    const [availableTimes, dispatch] = useReducer(reducer, initializeTimes) 
-    
-    const updateTimes = (value) => {
-        dispatch({type: 'reduce_time', payload: value})
-    }
-
-    const slotTimes = () => {
-        const slots = availableTimes.map((slot, index) => (
-            <option key={index} value={slot}>{slot}</option>
-        ))
-        return slots;
-    } 
-
-  return (
-    <main className='main'>
+        /* handleSelectedTime that user currently selected in field */
+        const handleSelectedTime = (givenTime) => {
+            setSelectedTime(givenTime);
+            dispatch({type: 'update_available_time'})
+            console.log(availableTimes)
+            console.log(selectedTime)
+        }
+        /* end of func */
+        
+        const slotTimes = () => {
+            const slots = availableTimes.map((slot, index) => (
+                <option key={index} value={slot}>{slot}</option>
+                ))
+                return slots;
+            } 
+            
+            return (
+                <main className='main'>
         <Routes>
             <Route path='/UnderConstruction' element={<UnderConstruction/>} />
             <Route path='/Menu' element={<Menu/>} />
@@ -96,6 +117,7 @@ const Main = () => {
             <Route path='/booking-confirmed' element={<BookingConfirmed/>} />
             <Route path='/BookingForm' 
             element={<BookingForm 
+                handleSelectedTime={handleSelectedTime}
                 availableTimes={availableTimes} 
                 updateTimes={updateTimes} 
                 slotTimes={slotTimes}
