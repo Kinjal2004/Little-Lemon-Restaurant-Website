@@ -1,10 +1,34 @@
-import React, { useState } from 'react'
+import React, { useState} from 'react'
 import css from "./BookingForm.css"
 
-const BookingForm = ({handleUpdate, handleSubmit, timeSlots, booking}) => {
+const BookingForm = ({updateTimes, slotTimes, navigate}) => {
+    const [booking, setBooking] = useState({
+        date: "",
+        time: "",
+        guest: "",
+        occasion: ""
+    })
 
-    return (
-        <section className='section'>
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(booking);
+        updateTimes(booking.time);
+        navigate('/booking-confirmed')
+    }
+
+    const handleUpdate = (type, data) => {
+        const tempState = {...booking, [type]: data};
+        setBooking(tempState);
+    }
+
+  return (
+    <>
+    <section className='section res-heading-sec'>
+        <div className='container grid-container res-container'>
+            <h1 className='res-heading'>Table Reservation</h1>
+        </div>
+    </section>
+    <section className='section'>
             <div className='container grid-container res-container'>
                 <form className='res-form' action="">
                     <div className='res-part'>
@@ -18,7 +42,7 @@ const BookingForm = ({handleUpdate, handleSubmit, timeSlots, booking}) => {
                         <select className="res-input" id="res-time" value={booking.time}
                         onChange={(e) => handleUpdate("time", e.target.value)}
                         >
-                            {timeSlots()}
+                            {slotTimes()}
                         </select>
                     </div>
                     <div className='res-part'>
@@ -44,7 +68,8 @@ const BookingForm = ({handleUpdate, handleSubmit, timeSlots, booking}) => {
                 </form>
             </div>
         </section>
-    )
+        </>
+  )
 }
 
 export default BookingForm

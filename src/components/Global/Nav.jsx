@@ -24,8 +24,8 @@ const Nav = () => {
             <menu className='navMenu'>
                 <li><NavLink to="/" className="nav-item">Home</NavLink></li>
                 <li><NavLink to="/UnderConstruction" className="nav-item">About</NavLink></li>
-                <li><NavLink to="/UnderConstruction" className="nav-item">Menu</NavLink></li>
-                <li><NavLink to="/BookingPage" className="nav-item">Reservation</NavLink></li>
+                <li><NavLink to="/Menu" className="nav-item">Menu</NavLink></li>
+                <li><NavLink to="/BookingForm" className="nav-item">Reservation</NavLink></li>
                 <li><NavLink to="/UnderConstruction" className="nav-item">Order Online</NavLink></li>
                 <li><NavLink to="/UnderConstruction" className="nav-item">Login</NavLink></li>
             </menu>
@@ -42,12 +42,12 @@ const Nav = () => {
           <AiOutlineClose  className='navHamburg'
           onClick={() => setHamValue(!hamValue)}/>
               <menu className='navMenu'>
-                <li><NavLink to="/" className="nav-item">Home</NavLink></li>
-                <li><NavLink to="/UnderConstruction" className="nav-item">About</NavLink></li>
-                <li><NavLink to="/UnderConstruction" className="nav-item">Menu</NavLink></li>
-                <li><NavLink to="/BookingPage" className="nav-item">Reservation</NavLink></li>
-                <li><NavLink to="/UnderConstruction" className="nav-item">Order Online</NavLink></li>
-                <li><NavLink to="/UnderConstruction" className="nav-item">Login</NavLink></li>
+                <li onClick={() => setHamValue(!hamValue)}><NavLink to="/" className="nav-item">Home</NavLink></li>
+                <li onClick={() => setHamValue(!hamValue)}><NavLink to="/UnderConstruction" className="nav-item">About</NavLink></li>
+                <li onClick={() => setHamValue(!hamValue)}><NavLink to="/Menu" className="nav-item">Menu</NavLink></li>
+                <li onClick={() => setHamValue(!hamValue)}><NavLink to="/BookingForm" className="nav-item">Reservation</NavLink></li>
+                <li onClick={() => setHamValue(!hamValue)}><NavLink to="/UnderConstruction" className="nav-item">Order Online</NavLink></li>
+                <li onClick={() => setHamValue(!hamValue)}><NavLink to="/UnderConstruction" className="nav-item">Login</NavLink></li>
               </menu>
           </nav>
         </>
