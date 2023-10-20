@@ -14,6 +14,11 @@ const Main = () => {
                 date: "20/10/2023", 
                 timeSlots:[
                     {
+                        slotTime: "16:00",
+                        guest: "4",
+                        occasion: "Birthday" 
+                    },
+                    {
                         slotTime: "20:00",
                         guest: "4",
                         occasion: "Birthday" 
@@ -28,9 +33,31 @@ const Main = () => {
         ]);
 
     /* Fetch API functions */
-    const fetchAPI = (date) => {
-        
+    const fetchAPI = (targetDate) => {
+        let result = [];
+        for (const booking of bookingData) {
+            if (booking.date === targetDate) {
+                console.log(booking.date)
+                for (let i = 16; i <= 21; i++ ) {
+                    let count = 0;
+                    const slot = i+ ":00"
+                    for (const timeSlot of booking.timeSlots) {
+                        if (timeSlot.slotTime === slot) {
+                            count++;
+                            break;
+                        }
+                    }
+                    if (count === 0) {
+                        result.push(slot);
+                    }
+                }
+            }
+        }
+        return result;
     }
+    /* end of func */
+
+    console.log(fetchAPI("20/10/2023"))
     
     const submitAPI = (formData) => {}
     
@@ -42,6 +69,7 @@ const Main = () => {
             )
         return state;
     }
+    
 
     const initializeTimes = ["16:00", "17:00", "18:00", "19:00", "20:00", "21:00" ,"22:00"]
 
