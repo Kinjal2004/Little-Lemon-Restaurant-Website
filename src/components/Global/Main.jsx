@@ -1,4 +1,4 @@
-import {React, useEffect, useReducer} from 'react'
+import {React, useEffect, useReducer, useState} from 'react'
 import {useNavigate, Routes, Route} from "react-router-dom"
 import Home from '../../components/Pages/Home';
 import BookingForm from '../Pages/BookingForm';
@@ -6,9 +6,31 @@ import UnderConstruction from '../../components/Pages/UnderConstruction';
 import BookingConfirmed from '../../components/Pages/BookingConfirmed';
 import Menu from '../../components/Pages/Menu'
 
-const Main = () => {
+const Main = () => { 
+    /* Booking State */
+    const [bookingData, setBookingData] = useState(
+        [
+            {
+                date: "20/10/2023", 
+                timeSlots:[
+                    {
+                        slotTime: "20:00",
+                        guest: "4",
+                        occasion: "Birthday" 
+                    },
+                    {
+                        slotTime: "21:00",
+                        guest: "3",
+                        occasion: "Anniversary"
+                    }
+                ]
+            }
+        ]);
+
     /* Fetch API functions */
-    const fetchAPI = (date) => {}
+    const fetchAPI = (date) => {
+        
+    }
     
     const submitAPI = (formData) => {}
     
@@ -50,6 +72,7 @@ const Main = () => {
                 updateTimes={updateTimes} 
                 slotTimes={slotTimes}
                 navigate={navigate}
+                setBookingData={setBookingData}
                 />} />
         </Routes>
     </main>
