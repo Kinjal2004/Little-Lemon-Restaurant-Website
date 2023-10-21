@@ -37,9 +37,11 @@ const Main = () => {
 
     /* Fetch API functions */
     const fetchAPI = (targetDate) => {
+        let matchBookingDate = false;
         let result = [];
         for (const booking of bookingData) {
             if (booking.date === targetDate.toString()) {
+                matchBookingDate = true;
                 for (let i = 16; i <= 21; i++ ) {
                     let count = 0;
                     const slot = i+ ":00"
@@ -53,11 +55,12 @@ const Main = () => {
                         result.push(slot);
                     }
                 }
-            } else {
-                for (let i = 16; i <= 21; i++) {
-                    const slot = i + ":00"
-                    result.push(slot);
-                }
+            } 
+        }
+        if (!matchBookingDate) {
+            for (let i = 16; i <= 21; i++) {
+                const slot = i + ":00"
+                result.push(slot);
             }
         }
         return result;
@@ -98,9 +101,10 @@ const Main = () => {
 
         /* handle update booking func */
         const handleUpdateBooking = (booking) => {
+            console.log(bookingData)
             //check if booking date exist
-            const existingBooking = bookingData.find((dataObject) => dataObject.data === booking.date);
-            
+            const existingBooking = bookingData.find((dataObject) => dataObject.date === booking.date);
+
             if (existingBooking) {
                 //update existing booking
                 const updatedTimeSlots = [...existingBooking.timeSlots, {
@@ -118,9 +122,10 @@ const Main = () => {
                 //update bookingData array with updated data object
                 setBookingData((prevBookingData) => 
                     prevBookingData.map((dataObject) => 
-                        dataObject.data === existingBooking.date ? updatedDataObject : dataObject
+                        dataObject.date === existingBooking.date ? updatedDataObject : dataObject
                     )
                 )
+                /* console.log(updatedDataObject) */
 
             } else { 
                 const newBooking =
@@ -134,11 +139,11 @@ const Main = () => {
                             }
                         ]
                     }
+                /* console.log(newBooking) */
                 //update the bookingData
                 setBookingData((prevBookingData) => [...prevBookingData, newBooking])
             }
-            /* dispatch({type: 'update_booking'}); */
-            console.log(bookingData);
+            dispatch({type: 'update_booking'});
         }
         /* end of the func */
         
