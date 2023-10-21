@@ -7,6 +7,9 @@ import BookingConfirmed from '../../components/Pages/BookingConfirmed';
 import Menu from '../../components/Pages/Menu'
 
 const Main = () => {
+    /* default time */
+    const [defaultTime, setDefaultTime] = useState(); 
+
     /* selected time state */
     const [selectedTime, setSelectedTime] = useState("");
 
@@ -35,6 +38,7 @@ const Main = () => {
             }
         ]);
 
+        console.log(bookingData);
     /* Fetch API functions */
     const fetchAPI = (targetDate) => {
         let matchBookingDate = false;
@@ -101,7 +105,6 @@ const Main = () => {
 
         /* handle update booking func */
         const handleUpdateBooking = (booking) => {
-            console.log(bookingData)
             //check if booking date exist
             const existingBooking = bookingData.find((dataObject) => dataObject.date === booking.date);
 
@@ -125,7 +128,6 @@ const Main = () => {
                         dataObject.date === existingBooking.date ? updatedDataObject : dataObject
                     )
                 )
-                /* console.log(updatedDataObject) */
 
             } else { 
                 const newBooking =
@@ -139,7 +141,6 @@ const Main = () => {
                             }
                         ]
                     }
-                /* console.log(newBooking) */
                 //update the bookingData
                 setBookingData((prevBookingData) => [...prevBookingData, newBooking])
             }
@@ -147,10 +148,18 @@ const Main = () => {
         }
         /* end of the func */
         
+        /* to set default time in booking state */
+        const handleSetDefaultTime = (slot) => {
+            setDefaultTime(slot);
+        }
+
         const slotTimes = () => {
-            const slots = availableTimes.map((slot, index) => (
-                <option key={index} value={slot}>{slot}</option>
-                ))
+            const slots = availableTimes.map((slot, index) => {
+                if (index === 0) {
+                    handleSetDefaultTime(slot); //this creates error
+                }
+                    return <option key={index} value={slot}>{slot}</option>
+                })
                 return slots;
             } 
             
@@ -163,6 +172,7 @@ const Main = () => {
             <Route path='/booking-confirmed' element={<BookingConfirmed/>} />
             <Route path='/BookingForm' 
             element={<BookingForm 
+                defaultTime={defaultTime}
                 handleSelectedTime={handleSelectedTime}
                 availableTimes={availableTimes}
                 slotTimes={slotTimes}

@@ -1,12 +1,12 @@
 import React, { useState} from 'react'
 import css from "./BookingForm.css"
 
-const BookingForm = ({handleSelectedTime, handleUpdateBooking, slotTimes, navigate}) => {
+const BookingForm = ({defaultTime, handleSelectedTime, handleUpdateBooking, slotTimes, navigate}) => {
     const [booking, setBooking] = useState({
         date: "",
         time: "",
-        guest: "",
-        occasion: ""
+        guest: "1",
+        occasion: "Birthday"
     })
 
     const handleSubmit = (e) => {
@@ -20,6 +20,16 @@ const BookingForm = ({handleSelectedTime, handleUpdateBooking, slotTimes, naviga
         const tempState = {...booking, [type]: data};
         setBooking(tempState);
     }
+
+    const handleDefaultTimeAndDate = (date) => {
+        const tempState = {...booking, 
+            "date": date,
+            "time": defaultTime,
+        };
+        setBooking(tempState);
+    }
+
+    console.log(booking)
 
   return (
     <>
@@ -35,9 +45,8 @@ const BookingForm = ({handleSelectedTime, handleUpdateBooking, slotTimes, naviga
                         <label className="res-text" htmlFor="res-date">Date</label>
                         <input className="res-input" type="date" id='res-date' 
                         onChange={(e) => {
-                            handleUpdate("date", e.target.value)
                             handleSelectedTime(e.target.value)
-                            /* console.log(booking.date) */
+                            handleDefaultTimeAndDate(e.target.value);
                         }}
                         />
                     </div>
