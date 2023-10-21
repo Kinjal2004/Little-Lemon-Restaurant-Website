@@ -1,7 +1,7 @@
 import React, { useState} from 'react'
 import css from "./BookingForm.css"
 
-const BookingForm = ({handleSelectedTime, updateTimes, slotTimes, navigate}) => {
+const BookingForm = ({handleSelectedTime, handleUpdateBooking, slotTimes, navigate}) => {
     const [booking, setBooking] = useState({
         date: "",
         time: "",
@@ -11,8 +11,8 @@ const BookingForm = ({handleSelectedTime, updateTimes, slotTimes, navigate}) => 
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        handleUpdateBooking(booking)
         console.log(booking);
-        updateTimes(booking.time);
         
         navigate('/booking-confirmed')
     }
