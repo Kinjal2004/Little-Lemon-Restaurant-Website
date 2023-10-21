@@ -12,7 +12,6 @@ const BookingForm = ({handleSelectedTime, handleUpdateBooking, slotTimes, naviga
     const handleSubmit = (e) => {
         e.preventDefault();
         handleUpdateBooking(booking)
-        console.log(booking);
         
         navigate('/booking-confirmed')
     }

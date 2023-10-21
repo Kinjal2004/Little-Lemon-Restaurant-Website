@@ -65,7 +65,9 @@ const Main = () => {
     /* end of func */
 
     
-    const submitAPI = (formData) => {}
+    const submitAPI = (formData) => {
+        return true;
+    }
     
     /* reducer for available booking slot times */
     const navigate = useNavigate();
@@ -75,6 +77,9 @@ const Main = () => {
             return updatedSlots;
         }
         if (action.type === 'update_booking') {
+            setSelectedTime("");
+            const updatedSlots = fetchAPI(selectedTime)
+            return updatedSlots;
         }
             return state;
         }
@@ -93,8 +98,47 @@ const Main = () => {
 
         /* handle update booking func */
         const handleUpdateBooking = (booking) => {
+            //check if booking date exist
+            const existingBooking = bookingData.find((dataObject) => dataObject.data === booking.date);
             
+            if (existingBooking) {
+                //update existing booking
+                const updatedTimeSlots = [...existingBooking.timeSlots, {
+                    slotTime: booking.time,
+                    guest: booking.guest,
+                    occasion: booking.occasion
+                }]
+
+                //create new object with updated time slots
+                const updatedDataObject = {
+                    ...existingBooking, 
+                    timeSlots: updatedTimeSlots,
+                };
+
+                //update bookingData array with updated data object
+                setBookingData((prevBookingData) => 
+                    prevBookingData.map((dataObject) => 
+                        dataObject.data === existingBooking.date ? updatedDataObject : dataObject
+                    )
+                )
+
+            } else { 
+                const newBooking =
+                    {
+                        date: booking.date,
+                        timeSlots: [
+                            {
+                                slotTime: booking.time,
+                                guest: booking.guest,
+                                occasion: booking.occasion  
+                            }
+                        ]
+                    }
+                //update the bookingData
+                setBookingData((prevBookingData) => [...prevBookingData, newBooking])
+            }
             /* dispatch({type: 'update_booking'}); */
+            console.log(bookingData);
         }
         /* end of the func */
         
