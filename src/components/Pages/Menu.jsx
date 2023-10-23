@@ -4,6 +4,7 @@ import articleImage from "../../assets/greek salad.jpg"
 import {MdDeliveryDining} from "react-icons/md"
 
 const Menu = () => {
+    /* render products article */
   return (
     <section className='section'>
         <div className='container grid-container'>
