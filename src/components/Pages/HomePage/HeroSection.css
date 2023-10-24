@@ -6,16 +6,6 @@
     grid-template-columns: 1fr 1fr;
 }
 
-.heroText{
-    color: white;
-}
-.heroImage {
-    object-fit: cover;
-    width: 100%;
-    height: 340px;
-    border-radius: 16px;
-    margin-bottom: -60px;
-}
 .yellowBorderBtn {
     border: 4px solid var(--secondaryColor);
 }

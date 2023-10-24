@@ -11,9 +11,9 @@ const HeroSection = () => {
         <div className='about-text-box'>
           <div>
             <h1>Little Lemon</h1>
-            <h2 className='heroText'>Chicago</h2>
+            <h2 className='text-white'>Chicago</h2>
           </div>
-            <p className='heroText'>
+            <p className='text-white'>
               We are a family owned Mediterranean restaurant,focused on traditional recipes served with a modern twist.
             </p>
             <Link to="/BookingForm">
@@ -22,7 +22,7 @@ const HeroSection = () => {
               </button>
             </Link>
         </div>
-        <img className="heroImage" src={heroImage} alt="error" />
+        <img className="page-main-image" src={heroImage} alt="error" />
       </div>
     </section>
   )

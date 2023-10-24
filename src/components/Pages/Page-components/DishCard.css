@@ -1,8 +1,8 @@
 /* Dish Card */
 .DishCard {
     display: grid;
-    grid-template-rows: 180px auto;
-    height: 480px;
+    grid-template-rows: 220px auto;
+    height: 580px;
     background: var(--greyColor);
     border-radius: 16px;
     transition: ease .4s;
@@ -11,7 +11,7 @@
 .DishImage {
     object-fit: cover;
     width: 100%;
-    height: 180px;
+    height: 220px;
     border-radius: 16px 16px 0 0;
 }
 

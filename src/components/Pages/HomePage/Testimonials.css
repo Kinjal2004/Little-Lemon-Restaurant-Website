@@ -17,38 +17,6 @@
     gap: 20px;
 }
 
-/* Testimonial card */
-.testimonialCard {
-    display: grid;
-    grid-template-rows: 180px 30px 30px auto;
-    height: 380px;
-    background: white;
-    border-radius: 16px;
-    padding: 20px;
-}
-
-.testimonialImage {
-    width: 140px;
-    border-radius: 50%;
-    justify-self: center;
-}
-.testimonialTitle {
-    justify-self: center;
-    font-family: var(--karla);
-    font-size: 14pt;
-    color: var(--primaryColor);
-}
-.testimonialRating {
-    color: var(--secondaryColor);
-    display: flex;
-    gap: 5px;
-}
-.testimonialText {
-    font-family: var(--karla);
-    font-size: 12pt;
-    color: var(--primaryColor);
-}
-
 @media screen and (max-width: 940px) {
     .TestimonialsList {
         grid-template-columns: auto auto auto;

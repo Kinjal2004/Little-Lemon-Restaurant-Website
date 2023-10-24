@@ -14,7 +14,7 @@ const HighLights = () => {
                     <button className="mainBtn grdItGoRight">Online Menu</button>
                 </Link>
             </div>
-            <div className='MenuList'>
+            <div className='menu-list'>
             {MenuDishes.map((MenuDish, index) => {
                 if(MenuDish['special'] === "true") {
                     return (

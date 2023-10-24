@@ -1,7 +1,7 @@
 import React from 'react'
 import css from "./Testimonials.css"
-import personImage from "../../../assets/person1.jpg"
-import {BsStarHalf, BsStarFill} from "react-icons/bs"
+import TestimonialCard from '../Page-components/TestimonialCard'
+import TestimonialData from '../../../data/TesimonialData.json'
 
 const Testimonials = () => {
   return (
@@ -9,42 +9,15 @@ const Testimonials = () => {
       <div className='container grid-container testimonials'>
         <h2 className='TestimonialsHeading mainSubHeading'>What people say about us!</h2>
         <div className='TestimonialsList'>
-          <article className='testimonialCard'>
-            <img className="testimonialImage" src={personImage} alt="error" />
-            <span className='testimonialTitle'>Allen Chodu</span>
-            <span className='testimonialRating'><BsStarFill/>
-            <BsStarFill/><BsStarFill/><BsStarFill/></span>
-            <p className='testimonialText'>"The food was decent, but waitress are hot 
-              here strongly suggest the place."
-            </p>
-          </article>
-          <article className='testimonialCard'>
-            <img className="testimonialImage" src={personImage} alt="error" />
-            <span className='testimonialTitle'>Allen Chodu</span>
-            <span className='testimonialRating'><BsStarFill/>
-            <BsStarFill/><BsStarFill/><BsStarFill/></span>
-            <p className='testimonialText'>"The food was decent, but waitress are hot 
-              here strongly suggest the place."
-            </p>
-          </article>
-          <article className='testimonialCard'>
-            <img className="testimonialImage" src={personImage} alt="error" />
-            <span className='testimonialTitle'>Allen Chodu</span>
-            <span className='testimonialRating'><BsStarFill/>
-            <BsStarFill/><BsStarFill/><BsStarFill/></span>
-            <p className='testimonialText'>"The food was decent, but waitress are hot 
-              here strongly suggest the place."
-            </p>
-          </article>
-          <article className='testimonialCard'>
-            <img className="testimonialImage" src={personImage} alt="error" />
-            <span className='testimonialTitle'>Allen Chodu</span>
-            <span className='testimonialRating'><BsStarFill/>
-            <BsStarFill/><BsStarFill/><BsStarFill/></span>
-            <p className='testimonialText'>"The food was decent, but waitress are hot 
-              here strongly suggest the place."
-            </p>
-          </article>
+          {TestimonialData.map((Testimonial, index) => (
+            <TestimonialCard
+              key={index}
+              personName={Testimonial["name"]}
+              personImage={Testimonial["image"]}
+              personRating={Testimonial["rating"]}
+              personReview={Testimonial["review"]}
+            />
+          ))}
         </div>
       </div>
     </section>
