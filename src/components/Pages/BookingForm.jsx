@@ -9,6 +9,10 @@ const BookingForm = ({defaultTime, handleSelectedTime, handleUpdateBooking, slot
         occasion: "Birthday"
     })
 
+    const isFormValid = () => {
+        return booking.date && booking.time && booking.guest && booking.occasion ;
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
         handleUpdateBooking(booking)
@@ -43,7 +47,7 @@ const BookingForm = ({defaultTime, handleSelectedTime, handleUpdateBooking, slot
                 <form className='res-form' action="">
                     <div className='res-part'>
                         <label className="res-text" htmlFor="res-date">Date</label>
-                        <input className="res-input" type="date" id='res-date' 
+                        <input className="res-input" type="date" id='res-date' required
                         onChange={(e) => {
                             handleSelectedTime(e.target.value)
                             handleDefaultTimeAndDate(e.target.value);
@@ -54,6 +58,7 @@ const BookingForm = ({defaultTime, handleSelectedTime, handleUpdateBooking, slot
                         <label className="res-text" htmlFor="res-time">Time</label>
                         <select className="res-input" id="res-time" value={booking.time}
                         onChange={(e) => handleUpdate("time", e.target.value)}
+                        required
                         >
                             {slotTimes()}
                         </select>
@@ -77,6 +82,7 @@ const BookingForm = ({defaultTime, handleSelectedTime, handleUpdateBooking, slot
                     <input className="mainBtn res-btn" type="submit" 
                     value='Make your reservation' 
                     onClick={(e) => handleSubmit(e)}
+                    disabled={!isFormValid()}
                     />
                 </form>
             </div>
