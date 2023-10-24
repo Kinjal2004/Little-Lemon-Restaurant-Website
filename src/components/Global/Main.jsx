@@ -1,4 +1,5 @@
 import {React, useEffect, useReducer, useState} from 'react'
+import css from './Main.css'
 import {useNavigate, Routes, Route} from "react-router-dom"
 import Home from '../../components/Pages/Home';
 import BookingForm from '../Pages/BookingForm';

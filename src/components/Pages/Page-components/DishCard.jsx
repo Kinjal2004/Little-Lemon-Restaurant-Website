@@ -1,20 +1,19 @@
 import React from 'react'
+import css from './DishCard.css'
 import {MdDeliveryDining} from "react-icons/md"
 
-const DishCard = () => {
+const DishCard = ({ dishImage, dishName, dishPrice, dishDetails }) => {
   return (
     <div>
-        <article className='articleCard'>
-                <img className='articleImage' src="" alt="error" />
-                <div className='articleDetails'>
-                    <span className='cardTile articleTitle'>Greek Salad</span>
-                    <span className='costText articleCost'>$ 12.99</span>
-                    <p className='paragraphText articleText' >
-                        The famous greek salad of crispy lettuce, 
-                        peppers, olives, and Chicago style feta cheese, 
-                        garnished with crunchy garlic and rosemary croutons.
+        <article className='DishCard'>
+                <img className='DishImage' src={dishImage} alt="error" />
+                <div className='DishDetails'>
+                    <span className='cardTile DishTitle'>{dishName}</span>
+                    <span className='costText DishCost'>$ {dishPrice}</span>
+                    <p className='paragraphText DishText' >
+                        {dishDetails}
                     </p>
-                    <button className='deliveryBtn articleBtn'>Order a Delivery<MdDeliveryDining className='articleDeliveryIcon'/></button>
+                    <button className='deliveryBtn DishBtn'>Order a Delivery<MdDeliveryDining className='DishDeliveryIcon'/></button>
                 </div>
             </article>
     </div>

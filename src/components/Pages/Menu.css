@@ -1,0 +1,11 @@
+.menu-center {
+    justify-content: center;
+}
+
+.menu-head {
+    background: var(--primaryColor);
+}
+
+.menu-section {
+    justify-content: center;
+}

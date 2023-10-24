@@ -1,0 +1,18 @@
+/* Menu List */
+.MenuList {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
+}
+
+@media screen and (max-width:840px){
+    .MenuList {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .MenuList {
+        grid-template-columns: auto;
+    }
+}

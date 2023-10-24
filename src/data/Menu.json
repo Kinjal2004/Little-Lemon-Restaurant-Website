@@ -1,8 +1,74 @@
 [
     {
-       "dish-name":"Greek Salad",
-       "dish-image":"../assets/greek salad.jpg",
-       "dish-price":"12.99",
-       "dish-details":"The famous greek salad of crispy lettuce, peppers, olives, and Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons."
-    }
+        "dish-name":"Greek Salad",
+        "dish-image":"menu-images/greek-salad.jpg",
+        "dish-price":"12.99",
+        "category":"Entrees",
+        "special":"true",
+        "dish-details":"The famous greek salad of crispy lettuce, peppers, olives, and Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons."
+    },
+    {
+        "dish-name":"Bruschetta",
+        "dish-image":"menu-images/brushetta.webp",
+        "dish-price":"5.99",
+        "category":"Appetizers",
+        "special":"true",
+        "dish-details":"Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil. It's a great appetizer to start with!"
+    },
+    {
+        "dish-name":"Lemon Dessert",
+        "dish-image":"menu-images/lemon-dessert.jpg",
+        "dish-price":"5.00",
+        "category":"Dessert",
+        "special":"true",
+        "dish-details":"This comes straight from grandma's recipe book, every last ingredient has been sourced and is as authentic as can be imagined. This is perfect for a light dessert!"
+    },
+    {
+        "dish-name":"Tomato Soup",
+        "dish-image":"menu-images/soupapp.webp",
+        "dish-price":"7.99",
+        "category":"Appetizers",
+        "special":"false",
+        "dish-details":"Our Tomato soup is a vibrant and comforting dish that captures the essence of Mediterranean flavors. This exquisite creation is crafted with a blend of sun-kissed tomatoes & aromatic herbs."
+     },
+     {
+        "dish-name":"Mediterranean Platter",
+        "dish-image":"menu-images/platterapp.webp",
+        "dish-price":"13.99",
+        "category":"Appetizers",
+        "special":"false",
+        "dish-details":"Our Mediterranean Platter combines a tantalizing blend of fresh grapes, crisp crackers, velvety hummus, succulent sausage, and juicy apples to create a harmonious culinary experience."
+     },
+     {
+        "dish-name":"Salmon Fillet",
+        "dish-image":"menu-images/salmondinner.webp",
+        "dish-price":"15.99",
+        "category":"Entrees",
+        "special":"false",
+        "dish-details":"The salmon fillet is expertly seasoned with Mediterranean spices, such as a blend of aromatic herbs, tangy lemon zest, and a hint of garlic. This perfect combination infuses the fish with layers of depth and complexity."
+     },
+     {
+        "dish-name":"Pork & Veg",
+        "dish-image":"menu-images/porkdinner.webp",
+        "dish-price":"13.99",
+        "category":"Entrees",
+        "special":"false",
+        "dish-details":"This delightful dish showcases the flavors of pork infused with the vibrant Mediterranean trio of tomatoes, onions, and cilantro."
+     },
+     {
+        "dish-name":"Chocolate Truffles",
+        "dish-image":"menu-images/truffledes.webp",
+        "dish-price":"8.99",
+        "category":"Dessert",
+        "special":"false",
+        "dish-details":"Indulge in a decadent journey of chocolate bliss with our exquisite Chocolate Truffles dessert, a heavenly creation that adds a touch of Mediterranean flair to this classic confection."
+     },
+     {
+        "dish-name":"Caramel Ice Cream",
+        "dish-image":"menu-images/icecreamdes.webp",
+        "dish-price":"6.99",
+        "category":"Dessert",
+        "special":"false",
+        "dish-details":"Crafted with utmost care and attention, our Caramel Ice Cream begins with a luscious, creamy base that is made using the finest ingredients. We start by simmering sweetened milk and cream until they reach the perfect consistency."
+     }
 ]
