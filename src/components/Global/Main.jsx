@@ -2,6 +2,7 @@ import {React, useEffect, useReducer, useState} from 'react'
 import css from './Main.css'
 import {useNavigate, Routes, Route} from "react-router-dom"
 import Home from '../../components/Pages/Home';
+import AboutUs from '../Pages/AboutUs';
 import BookingForm from '../Pages/BookingForm';
 import UnderConstruction from '../../components/Pages/UnderConstruction';
 import BookingConfirmed from '../../components/Pages/BookingConfirmed';
@@ -168,6 +169,7 @@ const Main = () => {
                 <main className='main'>
         <Routes>
             <Route path='/UnderConstruction' element={<UnderConstruction/>} />
+            <Route path='/AboutUs' element={<AboutUs/>} />
             <Route path='/Menu' element={<Menu/>} />
             <Route path='/' element={<Home/>} />
             <Route path='/booking-confirmed' element={<BookingConfirmed/>} />

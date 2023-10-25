@@ -1,0 +1,34 @@
+.aboutUsSection {
+    background: var(--primaryColor);
+    margin-bottom:80px;
+}
+
+.aboutSections {
+}
+
+.aboutUsContainer {
+    grid-template-columns: 1fr 1fr;
+}
+
+.bigBold {
+    font-size: 56px;
+    font-weight:500;
+}
+
+.aboutThirdPara {
+    text-align: right;
+}
+
+/* about second section  Images*/
+
+.aboutSecondImage {
+    float: left;
+    width: 520px;
+    margin: 0 40px 20px 0;
+}
+
+.aboutThirdImage {
+    float: right;
+    width: 520px;
+    margin: 0 0 20px 40px;
+}
